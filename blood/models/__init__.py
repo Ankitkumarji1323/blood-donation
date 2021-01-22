@@ -7,4 +7,5 @@ __author = "Mbr-sagor"
 __all__ = [
     DomainEntity,
     Location,
+    Donor,
 ]
