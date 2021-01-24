@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
 
 
-class HomepageView(TemplateView):
+class Homepage(TemplateView):
     template_name = 'homepage/home.html'
