@@ -6,7 +6,8 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 
-from blood.form.login_form import CustomAuthenticationForm
+from blood.forms.login_form import CustomAuthenticationForm
+from blood.forms.registration_form import UserRegistrationForm
 
 
 class Login(LoginView):
@@ -37,6 +38,6 @@ class Logout(View):
 
 
 class SingUpView(CreateView):
-    # form_class = CustomUserCreationForm
+    form_class = UserRegistrationForm
     success_url = reverse_lazy('login')
     template_name = 'auth/registration.html'
