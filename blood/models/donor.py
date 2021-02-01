@@ -10,7 +10,7 @@ class Donor(DomainEntity):
     last_name = models.CharField(max_length=40)
     address = models.TextField()
     current_location = models.ForeignKey(Location, on_delete=models.CASCADE, blank=True, related_name='donor_location')
-    select_blood = models.CharField(max_length=3, choices=BloodGroup.choices, default=BloodGroup.AB)
+    select_blood = models.CharField(max_length=20, choices=BloodGroup.choices, default=BloodGroup.AB)
     phone_number = models.CharField(max_length=15)
     email_address = models.EmailField(max_length=50, blank=True, null=True)
     date_of_birth = models.DateField(null=True)

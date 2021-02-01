@@ -1,4 +1,4 @@
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.messages.views import SuccessMessageMixin
@@ -14,3 +14,10 @@ class CreateDonorView(SuccessMessageMixin, CreateView):
     form_class = DonorForm
     success_url = '/add-donor/'
     success_message = "Service has been successfully created!"
+
+
+@method_decorator(login_required(login_url='/login/'), name='dispatch')
+class DonorListView(ListView):
+    template_name = 'members/donor_list.html'
+    model = Donor
+    context_object_name = 'donors'
