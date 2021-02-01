@@ -11,6 +11,20 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
+                    <div class="card">
+                        {% if messages %}
+                            <div class="category_message">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {% for m in messages %}
+                                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ m }}</li>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="row">
@@ -36,7 +50,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <lable for="first_name">Email Address</lable>
+                                    <lable for="first_name">Email Address (Optional)</lable>
                                     {{ form.email_address }}
                                 </div>
                             </div>
@@ -49,7 +63,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <lable for="first_name">Profession</lable>
-                                    {{ form.first_name }}
+                                    {{ form.profession }}
                                 </div>
                             </div>
                         </div>
@@ -62,7 +76,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <lable for="reference_number">Reference Number</lable>
+                                    <lable for="reference_number">Reference Number (Optional)</lable>
                                     {{ form.reference_number }}
                                 </div>
                             </div>
@@ -91,6 +105,12 @@
                                     <lable for="reference_name">Reference Name (Optional)</lable>
                                     {{ form.reference_name }}
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="address">Enter your address</label>
+                                {{ form.address }}
                             </div>
                         </div>
                         <button class="btn btn-success" type="submit">Add Member</button>
