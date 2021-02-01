@@ -1,0 +1,103 @@
+{% extends 'index.html' %}
+
+{% block title %} Add New donor {% endblock %}
+
+{% block content %}
+
+    <br/>
+    <br/>
+    <br/>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="first_name">First Name</lable>
+                                    {{ form.first_name }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="last_name">Last Name</lable>
+                                    {{ form.last_name }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="first_name">Phone Number</lable>
+                                    {{ form.phone_number }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="first_name">Email Address</lable>
+                                    {{ form.email_address }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="first_name">Date Of Birth</lable>
+                                    {{ form.date_of_birth }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="first_name">Profession</lable>
+                                    {{ form.first_name }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="first_name">Last Donation Date</lable>
+                                    {{ form.last_donation_date }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="reference_number">Reference Number</lable>
+                                    {{ form.reference_number }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="current_location">Location</lable>
+                                    {{ form.current_location }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="select_blood">Select Blood Group</lable>
+                                    {{ form.select_blood }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="gender">Gender</lable>
+                                    {{ form.gender }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <lable for="reference_name">Reference Name (Optional)</lable>
+                                    {{ form.reference_name }}
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-success" type="submit">Add Member</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

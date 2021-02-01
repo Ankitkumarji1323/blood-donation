@@ -4,7 +4,7 @@ from django.forms import TextInput, Select, Textarea, DateTimeInput
 from blood.models.donor import Donor
 
 
-class LocationForm(forms.ModelForm):
+class DonorForm(forms.ModelForm):
     class Meta:
         model = Donor
         fields = '__all__'
@@ -14,10 +14,14 @@ class LocationForm(forms.ModelForm):
             'last_name': TextInput(attrs={'class': 'form-control', 'id': 'last_name'}),
             'address': Textarea(attrs={'class': 'form-control', 'id': 'address'}),
             'current_location': Select(attrs={'class': 'form-control', 'id': 'current_location'}),
+            'reference_name': TextInput(attrs={'class': 'form-control', 'id': 'reference_name'}),
+            'reference_number': TextInput(attrs={'class': 'form-control', 'id': 'reference_number'}),
             'phone_number': TextInput(attrs={'class': 'form-control', 'id': 'phone_number'}),
+            'select_blood': Select(attrs={'class': 'form-control', 'id': 'select_blood'}),
             'email_address': TextInput(attrs={'class': 'form-control', 'id': 'email_address'}),
-            'date_of_birth': DateTimeInput(attrs={'class': 'form-control', 'id': 'date_of_birth'}),
+            'date_of_birth': DateTimeInput(attrs={'class': 'form-control', 'id': 'date_of_birth', 'type': 'date'}),
             'gender': Select(attrs={'class': 'form-control', 'id': 'gender'}),
             'profession': TextInput(attrs={'class': 'form-control', 'id': 'profession'}),
-            'last_donation_date': DateTimeInput(attrs={'class': 'form-control', 'id': 'last_donation_date'}),
+            'last_donation_date': DateTimeInput(
+                attrs={'class': 'form-control', 'id': 'last_donation_date', 'type': 'date'}),
         }

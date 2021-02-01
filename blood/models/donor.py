@@ -17,6 +17,8 @@ class Donor(DomainEntity):
     gender = models.IntegerField(choices=SelectGender.select_gender(), default=SelectGender.MALE.value)
     profession = models.CharField(max_length=100, blank=True, null=True)
     last_donation_date = models.DateField(null=True)
+    reference_name = models.CharField(max_length=40, blank=True, null=True)
+    reference_number = models.CharField(max_length=40, blank=True, null=True)
 
     def __str__(self):
         return self.first_name[:20]

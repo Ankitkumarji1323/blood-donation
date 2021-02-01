@@ -15,7 +15,7 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="">Add Member</a>
+                        <a class="nav-link" href="{% url 'create_donor' %}">Add Donor</a>
                         <a class="nav-link" href="">Member list</a>
                     </nav>
                 </div>
@@ -31,7 +31,7 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>
-            Superuser
+            {{ request.user }}
         </div>
     </nav>
 </div>

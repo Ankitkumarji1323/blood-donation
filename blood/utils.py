@@ -23,11 +23,11 @@ class SelectGender(IntEnum):
 
 
 class BloodGroup(models.TextChoices):
-    AB = 'AB', _('AB posation')
-    ABN = 'AB-', _('AB Negative')
-    BP = 'B+', _('B Positive')
-    BN = 'B-', _('B Negative')
-    AP = 'A+', _('A Positive')
-    AN = 'A-', _('A Negative')
-    OP = 'O+', _('O Posative')
-    ON = 'O-', _('O Negative')
+    AB = 'AB', _('AB+ (Positive)')
+    ABN = 'AB-', _('AB- (Negative)')
+    BP = 'B+', _('B+ (Positive)')
+    BN = 'B-', _('B- (Negative)')
+    AP = 'A+', _('A+ (Positive)')
+    AN = 'A-', _('A- (Negative)')
+    OP = 'O+', _('O- (Positive)')
+    ON = 'O-', _('O- (Negative)')
