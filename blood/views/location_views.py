@@ -14,7 +14,7 @@ class LocationCreateListView(SuccessMessageMixin, CreateView, ListView):
     model = Location
     form_class = LocationForm
     paginate_by = 6
-    context_object_name = 'location'
+    context_object_name = 'locations'
     success_url = '/location/'
     success_message = "Location successfully created!"
 
