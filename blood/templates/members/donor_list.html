@@ -38,9 +38,9 @@
                                     <td>{{ donnor.current_location }}</td>
                                     <td>{{ donnor.current_location }}</td>
                                     <td>
-                                        <a class="btn btn-success btn-sm mr-1" href=""><i class="fa fa-pen"></i></a>
+                                        <a class="btn btn-success btn-sm mr-1" href="{% url 'donor_update' donnor.id %}"><i class="fa fa-pen"></i></a>
                                         <a class="btn btn-info btn-sm mr-1" href="{% url 'donor_detail' donnor.id %}"><i class="fa fa-eye"></i></a>
-                                        <a class="btn btn-danger btn-sm" href=""><i class="fa fa-trash"></i></a>
+                                        <a class="btn btn-danger btn-sm" href="{% url 'donor_delete' donnor.id %}"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             {% endfor %}

@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, DeleteView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.messages.views import SuccessMessageMixin
@@ -24,7 +24,24 @@ class DonorListView(ListView):
 
 
 @method_decorator(login_required(login_url='/login/'), name='dispatch')
-class DonorDetailView(DeleteView):
+class DonorDetailView(DetailView):
     model = Donor
     template_name = 'members/donor_detail.html'
     context_object_name = 'donor'
+
+
+@method_decorator(login_required(login_url='/login/'), name='dispatch')
+class DonorUpdateView(SuccessMessageMixin, UpdateView):
+    template_name = 'members/add_donor.html'
+    model = Donor
+    form_class = DonorForm
+    success_url = '/donor-list/'
+    success_message = "Member has been successfully updated!"
+
+
+@method_decorator(login_required(login_url='/login/'), name='dispatch')
+class DonorDeleteView(DeleteView):
+    model = Donor
+    success_url = '/donor-list/'
+    template_name = 'members/donor_confirm_delete.html'
+
