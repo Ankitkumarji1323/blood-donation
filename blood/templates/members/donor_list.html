@@ -6,7 +6,11 @@
 
     <main>
         <div class="container-fluid">
-            {% include 'members/pageTitle.html' %}
+            <h1 class="mt-4">Blood Donor</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Donor List</li>
+            </ol>
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
