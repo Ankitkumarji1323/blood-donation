@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import TextInput, Select, Textarea, DateTimeInput
+from django.forms import TextInput, Select, Textarea, DateTimeInput, FileInput
 
 from blood.models.donor import Donor
 
@@ -22,6 +22,7 @@ class DonorForm(forms.ModelForm):
             'date_of_birth': DateTimeInput(attrs={'class': 'form-control', 'id': 'date_of_birth', 'type': 'date'}),
             'gender': Select(attrs={'class': 'form-control', 'id': 'gender'}),
             'profession': TextInput(attrs={'class': 'form-control', 'id': 'profession'}),
+            'profile_picture': FileInput(attrs={'class': 'form-control', 'id': 'profile_picture'}),
             'last_donation_date': DateTimeInput(
                 attrs={'class': 'form-control', 'id': 'last_donation_date', 'type': 'date'}),
         }

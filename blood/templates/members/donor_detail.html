@@ -1,0 +1,91 @@
+{% extends 'index.html' %}
+
+{% block title %} {{ donor.get_full_name }} Details {% endblock %}
+
+{% block content %}
+
+    <main>
+        <div class="container-fluid">
+            <h1 class="mt-4">Blood Donor</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Donor Detail</li>
+            </ol>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>{{ donor.get_full_name }}'s Details</h2>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img-thumbnail" src="{{ donor.profile_picture.url }}"
+                                 alt="{{ donor.get_full_name }}">
+                        </div>
+                        <div class="col-md-9">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    First Name
+                                    <span class="badge-pill">{{ donor.first_name }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Last Name
+                                    <span class="badge-pill">{{ donor.last_name }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    FullName
+                                    <span class="badge-pill">{{ donor.get_full_name }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Address
+                                    <span class="badge-pill">{{ donor.address }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Location
+                                    <span class="badge-pill">{{ donor.current_location }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Blood Group
+                                    <span class="badge-pill">{{ donor.select_blood }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Phone Number
+                                    <span class="badge-pill">{{ donor.phone_number }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Email Address
+                                    <span class="badge-pill">{% if email_address %} {{ donor.email_address }} {% else %}
+                                        No email address provide {% endif %}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Date Of Birth
+                                    <span class="badge-pill">{{ donor.date_of_birth }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Gender
+                                    <span class="badge-pill">{{ donor.gender }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Profession
+                                    <span class="badge-pill">{{ donor.profession }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Last Blood Donation Date
+                                    <span class="badge-pill">{{ donor.last_donation_date }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Reference Name
+                                    <span class="badge-pill">{{ donor.reference_name }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Reference Contact Number
+                                    <span class="badge-pill">{{ donor.reference_number }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+{% endblock %}
