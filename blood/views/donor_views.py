@@ -45,3 +45,7 @@ class DonorDeleteView(DeleteView):
     success_url = '/donor-list/'
     template_name = 'members/donor_confirm_delete.html'
 
+
+class FilterDonor(ListView):
+    template_name = 'filter/filter.html'
+    model = Donor
