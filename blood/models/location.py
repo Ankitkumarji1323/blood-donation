@@ -5,6 +5,7 @@ from blood.models.base import DomainEntity
 class Location(DomainEntity):
     name = models.CharField(max_length=95)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, default=None)
+    image = models.ImageField(upload_to='location', blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
 
     class Meta:
