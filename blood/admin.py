@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from blood.models.location import Location
 from blood.models.donor import Donor
+from blood.models.preferences import ApplicationSetting
 
 
 class LocationAdmin(admin.ModelAdmin):
@@ -20,3 +21,5 @@ class DonorAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Donor, DonorAdmin)
+
+admin.site.register(ApplicationSetting)
