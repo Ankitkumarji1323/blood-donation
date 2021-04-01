@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'blood',
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
