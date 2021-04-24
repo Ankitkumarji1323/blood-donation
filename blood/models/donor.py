@@ -26,3 +26,14 @@ class Donor(DomainEntity):
 
     def get_full_name(self):
         return f"{self.first_name} {self.last_name}"
+
+
+class RecentDonor(DomainEntity):
+    donor_name = models.ForeignKey(Donor, on_delete=models.CASCADE, related_name='recent_donor')
+    last_donation = models.DateTimeField()
+    patient_name = models.CharField(max_length=50)
+    address = models.TextField()
+    patient_number = models.CharField(max_length=14)
+
+    def __str__(self):
+        return self.donor_name.get_full_name()
