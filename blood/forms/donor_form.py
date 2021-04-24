@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import TextInput, Select, Textarea, DateTimeInput, FileInput
 
-from blood.models.donor import Donor
+from blood.models.donor import Donor, RecentDonor
 
 
 class DonorForm(forms.ModelForm):
@@ -25,4 +25,19 @@ class DonorForm(forms.ModelForm):
             'profile_picture': FileInput(attrs={'class': 'form-control', 'id': 'profile_picture'}),
             'last_donation_date': DateTimeInput(
                 attrs={'class': 'form-control', 'id': 'last_donation_date', 'type': 'date'}),
+        }
+
+
+class RecentDonorFrom(forms.ModelForm):
+    class Meta:
+        model = RecentDonor
+        fields = '__all__'
+
+        widgets = {
+            'patient_name': TextInput(attrs={'class': 'form-control', 'id': 'patient_name'}),
+            'patient_number': TextInput(attrs={'class': 'form-control', 'id': 'patient_number'}),
+            'address': Textarea(attrs={'class': 'form-control', 'id': 'address', 'rows': 4}),
+            'last_donation': DateTimeInput(attrs={'class': 'form-control', 'id': 'last_donation', 'type': 'date'}),
+            'donor_name': Select(attrs={'class': 'form-control', 'id': 'donor_name'}),
+            'picture': FileInput(attrs={'class': 'form-control', 'id': 'picture'}),
         }

@@ -34,6 +34,7 @@ class RecentDonor(DomainEntity):
     patient_name = models.CharField(max_length=50)
     address = models.TextField()
     patient_number = models.CharField(max_length=14)
+    picture = models.ImageField(upload_to='recent_donor', blank=True, null=True)
 
     def __str__(self):
         return self.donor_name.get_full_name()
