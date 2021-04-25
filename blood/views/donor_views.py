@@ -53,6 +53,6 @@ class FilterDonor(ListView):
 
 
 @method_decorator(login_required(login_url='/login/'), name='dispatch')
-class DonorHistory(ListView):
+class RecentDonorListView(ListView):
     template_name = 'donor/donor_history.html'
     model = RecentDonor

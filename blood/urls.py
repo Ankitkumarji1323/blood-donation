@@ -3,8 +3,7 @@ from blood.views.dashboard_view import Dashboard
 from blood.views.homepage_views import Homepage
 from blood.views.auth_views import Login, SingUpView, Logout
 from blood.views.location_views import LocationCreateListView
-from blood.views.donor_views import CreateDonorView, DonorListView, DonorDetailView, DonorUpdateView, DonorDeleteView, \
-    FilterDonor
+from blood.views.donor_views import *
 
 urlpatterns = [
     path('', Homepage.as_view(), name="homepage"),
@@ -19,4 +18,6 @@ urlpatterns = [
     path('donor-update/<pk>/', DonorUpdateView.as_view(), name="donor_update"),
     path('donor-delete/<pk>/', DonorDeleteView.as_view(), name="donor_delete"),
     path('filter-blood/', FilterDonor.as_view(), name="filter_blood"),
+    path('filter-blood/', FilterDonor.as_view(), name="filter_blood"),
+    path('recent-donor/', RecentDonorListView.as_view(), name="recent_donor"),
 ]
