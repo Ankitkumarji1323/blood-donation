@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.messages.views import SuccessMessageMixin
 
-from blood.models.donor import Donor
+from blood.models.donor import Donor, RecentDonor
 from blood.forms.donor_form import DonorForm
 
 
@@ -46,6 +46,13 @@ class DonorDeleteView(DeleteView):
     template_name = 'members/donor_confirm_delete.html'
 
 
+@method_decorator(login_required(login_url='/login/'), name='dispatch')
 class FilterDonor(ListView):
     template_name = 'filter/filter.html'
     model = Donor
+
+
+@method_decorator(login_required(login_url='/login/'), name='dispatch')
+class DonorHistory(ListView):
+    template_name = 'donor/donor_history.html'
+    model = RecentDonor

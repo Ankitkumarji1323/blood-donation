@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block title %} Dashboard || Donor history {% endblock %}
+
+{% block content %}
+
+    <main>
+        <div class="container-fluid">
+            <h1 class="mt-4">Donor History</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Donor history</li>
+            </ol>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h2>Donor list</h2>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+{% endblock %}
