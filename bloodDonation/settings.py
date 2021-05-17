@@ -156,3 +156,14 @@ EMAIL_HOST_USER = 'your@djangoapp.com'
 EMAIL_HOST_PASSWORD = 'your-email account-password'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+# CORS CONFIG #
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_METHODS = (
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    'OPTIONS',
+    'PATCH',
+)
