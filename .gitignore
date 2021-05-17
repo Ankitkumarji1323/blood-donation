@@ -6,3 +6,4 @@ migrations/
 media
 .vscode
 .DS_Store
+.env
