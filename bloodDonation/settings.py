@@ -38,16 +38,20 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 # Application definition
 
-INSTALLED_APPS = [
+DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
 
+LOCAL_APPS = [
     'blood',
 ]
+
+INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
