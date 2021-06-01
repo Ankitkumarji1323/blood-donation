@@ -3,6 +3,7 @@ from django.contrib import admin
 from blood.models.location import Location
 from blood.models.donor import Donor, RecentDonor
 from blood.models.preferences import ApplicationSetting
+from blood.models.campaign import Campaign
 
 
 class LocationAdmin(admin.ModelAdmin):
@@ -24,3 +25,4 @@ admin.site.register(Donor, DonorAdmin)
 
 admin.site.register(ApplicationSetting)
 admin.site.register(RecentDonor)
+admin.site.register(Campaign)
