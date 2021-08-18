@@ -24,5 +24,23 @@ class DonorAdmin(admin.ModelAdmin):
 admin.site.register(Donor, DonorAdmin)
 
 admin.site.register(ApplicationSetting)
-admin.site.register(RecentDonor)
-admin.site.register(Campaign)
+
+
+class RecentDonorAdmin(admin.ModelAdmin):
+    list_display = ['id', 'donor_name', 'last_donation', 'patient_name', 'address', 'patient_number']
+    search_fields = ['id', 'donor_name', 'patient_name']
+    list_display_links = ['id', 'donor_name', 'last_donation']
+
+
+admin.site.register(RecentDonor, RecentDonorAdmin)
+
+
+class CampaignAdmin(admin.ModelAdmin):
+    list_display = ['id', 'campaign_name', 'day_name', 'sponsor_by', 'address', 'material_cost', 'other_cost',
+                    'campaign_date']
+    search_fields = ['campaign_name', 'day_name', 'sponsor_by']
+    list_editable = ['day_name', 'material_cost', 'other_cost']
+    list_display_links = ['id', 'campaign_name', 'address']
+
+
+admin.site.register(Campaign, CampaignAdmin)
