@@ -4,7 +4,7 @@ from blood.views.homepage_views import Homepage
 from blood.views.auth_views import Login, SingUpView, Logout
 from blood.views.location_views import LocationCreateListView
 from blood.views.donor_views import *
-from blood.views.campaign_views import CampaignListView
+from blood.views.campaign_views import CampaignListView, CampaignCreateView
 
 urlpatterns = [
     path('', Homepage.as_view(), name="homepage"),
@@ -22,4 +22,5 @@ urlpatterns = [
     path('filter-blood/', FilterDonor.as_view(), name="filter_blood"),
     path('recent-donor/', RecentDonorListView.as_view(), name="recent_donor"),
     path('campaign/', CampaignListView.as_view(), name="campaign_list"),
+    path('campaign-create/', CampaignCreateView.as_view(), name="campaign_create"),
 ]

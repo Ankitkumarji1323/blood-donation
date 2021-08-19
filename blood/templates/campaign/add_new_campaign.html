@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+
+{% block title %} Add New Campaign {% endblock %}
+
+{% block content %}
+
+    <main>
+        <div class="container-fluid">
+            <h1 class="mt-4">Add Campaign</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item active">Add new Campaign</li>
+            </ol>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-message">
+                        {% if messages %}
+                            <div class="category_message">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {% for m in messages %}
+                                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ m }}</li>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <br/>
+                        <button class="btn btn-success" type="submit">Add Campaign</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
