@@ -4,7 +4,7 @@ from django.forms import TextInput, NumberInput, DateTimeInput, FileInput
 from blood.models.campaign import Campaign
 
 
-class RecentDonorFrom(forms.ModelForm):
+class CampaignDonorFrom(forms.ModelForm):
     class Meta:
         model = Campaign
         fields = '__all__'
