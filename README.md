@@ -21,3 +21,25 @@ Then create `.env` file and paste code from `.env-sample` file which has basical
 ./manage.py createsuperuser
 ./manage.py runserver
 ```
+
+###### If you want to run the project docker pls follow the below command:
+```bash
+docker-compose.yml
+```
+
+##### Django database configuration example:
+```python
+# settings.py
+   
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_name',
+        'USER': 'db_user',
+        'PASSWORD': 'db_password',
+        'HOST': 'localhost', # Here your database host
+        'PORT': 5432, # Database port
+    }
+}
+
+```
