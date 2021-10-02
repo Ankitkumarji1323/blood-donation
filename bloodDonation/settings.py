@@ -89,10 +89,20 @@ WSGI_APPLICATION = 'bloodDonation.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USERNAME'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT')
     }
 }
 
@@ -146,8 +156,9 @@ MESSAGE_TAGS = {
     messages.WARNING: 'WARNING'
 }
 
-LOGIN_URL = 'login/'
-LOGIN_REDIRECT_URL = 'login/'
+# Login configuration
+LOGIN_URL = env('LOGIN_URL')
+LOGIN_REDIRECT_URL = env('LOGIN_REDIRECT_URL')
 
 # SMTP config
 EMAIL_HOST = env("EMAIL_HOST")
