@@ -47,11 +47,17 @@ DEFAULT_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# Local apps
 LOCAL_APPS = [
     'blood',
 ]
+# Library apps
+LIBRARY_APPS = [
+    'rest_framework',
+    'rest_framework.authtoken'
+]
 
-INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS
+INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + LIBRARY_APPS
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
